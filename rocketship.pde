@@ -41,12 +41,10 @@ class Rocket {
   void update (PVector[] forces, int num_forces) {
     
     PVector force = b[booster_stage].boost(velocity.copy().normalize());
-    print("mass = " + mass); 
-    
+        
     for (int i = 0; i < num_forces; i++) { 
       force.add (forces[i]);
     }
-    
     println ("net force" + force); 
     apply_trans_force (force); 
     
